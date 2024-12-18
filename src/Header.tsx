@@ -1,5 +1,9 @@
+import cart from './assets/img/cart.svg'
+
 export const Header = () => {
   return (
-    <div>Header</div>
+    <div className="header">
+        <img src={cart} alt="cart icon" />
+    </div>
   )
 }
