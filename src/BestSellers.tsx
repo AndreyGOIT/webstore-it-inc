@@ -99,7 +99,7 @@ useEffect(() => {
             <h4>{product.title}</h4>
             <p className="price">${product.price}</p>
             {/* <button>Show more</button> */}
-            <Link to="/product">Show more</Link>
+            <Link to={`/product/${product.id}`}>Show more</Link>
           </div>
         ))}
       </div>

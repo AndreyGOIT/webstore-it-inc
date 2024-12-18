@@ -3,18 +3,21 @@ import { useEffect, useState } from "react";
 import type { ProductType } from "./BestSellers.tsx";
 import rating from "./assets/img/rating.svg";
 import cartWhite from "./assets/img/cartWhite.svg";
+import { useParams } from "react-router";
 
 export const Product = () => {
   const [product, setProduct] = useState<ProductType | null>(null);
-console.log(product);
+
+  const {id} = useParams()
+
   useEffect(() => {
     axios
-      .get("https://masterclass.kimitsu.it-incubator.io/api/products/1")
+      .get(`https://masterclass.kimitsu.it-incubator.io/api/products/${id}`)
       .then((res) => {
         const product = res.data;
         setProduct(product);
       });
-  }, []);
+  }, [id]);
 
   if (product === null) {
     return <h1>Loading ...</h1>
